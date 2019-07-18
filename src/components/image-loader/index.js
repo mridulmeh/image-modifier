@@ -1,10 +1,9 @@
 import React from 'react';
-import me from '../../images/me.JPG'
+import me from '../../images/me.JPG';
 
-const loaderHtml = ()=>(<input 
-	type = "file" 
-	accept = "image/png, image/jpeg"></input>)
-const imageHtml = (src)=>(<img src = {src} alt= {'modifier'}></img>)
+const loaderHtml = () => (<input
+	type = "file"
+	accept = "image/png, image/jpeg"></input>);
 
 class ImageLoader extends React.Component {
 
@@ -20,13 +19,24 @@ class ImageLoader extends React.Component {
 	render () {
 		const {
 			imagePresent
-		} = this.state
+		} = this.state;
+		const {
+			modifyMode,
+			onMarkerAdd
+		} = this.props;
 
-		const actualHtml = imagePresent ? imageHtml(me):  loaderHtml() 
+		const imageHtml = (src) => (<img
+			onClick = {modifyMode ? onMarkerAdd : () => {}}
+			src = {src}
+			alt= {'modifier'}></img>);
+
+		const actualHtml = imagePresent ? imageHtml(me) : loaderHtml();
 
 		return (
 			<div>
 				{actualHtml}
+				{modifyMode ? (<div>Click on the image to start adding points</div>) : ''}
+
 			</div>
 		);
 	}

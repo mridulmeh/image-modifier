@@ -1,11 +1,36 @@
 import React from 'react';
+import show from '../../images/show.png';
+import hide from '../../images/hide.png';
+import './visibility-toggler.css';
 
 class VisibilityToggler extends React.Component {
 
 	render () {
-		
+		const {
+			objects,
+			onToggle
+		} = this.props;
+
+		const objHtml = (objName, objValue) => (<div className = "visibility-toggle-row">
+			<img
+				className = "visibility-toggle-eye visibility-toggle-section"
+				src = {objValue.view ? show : hide}
+				onClick = {() => onToggle(objName)}
+				alt = {'toggleVisibility'}>
+			</img>
+			<div className = "visibility-toggle-name visibility-toggle-section">{objName}</div>
+		</div>);
+
+		const toggleHtml = 	Object.entries(objects).map(e => (
+			<div>
+				{objHtml(e[0], e[1])}
+			</div>
+		));
+
 		return (
-			<div></div>
+			<div className = "visibility-toggle">
+				{toggleHtml}
+			</div>
 		);
 	}
 }

@@ -1,0 +1,16 @@
+.section {
+    height: 100vh;
+    float: left;
+}
+
+.left-section{
+    width: 5%;
+}
+
+.section.middle-section {
+    width: 80%;
+}
+
+.section.right-section {
+    width: 15%;
+}

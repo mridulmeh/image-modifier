@@ -1,0 +1,9 @@
+.visibility-toggle-row {
+    float: left;
+    width: 100%;
+}
+
+.visibility-toggle-section {
+    float: left;
+    padding: 0px 5px;
+}
