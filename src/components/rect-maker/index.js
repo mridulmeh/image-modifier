@@ -1,4 +1,5 @@
 import React from 'react';
+import { DotMaker } from '..';
 
 class RectMaker extends React.Component {
 
@@ -10,22 +11,28 @@ class RectMaker extends React.Component {
 		let html = [];
 
 		Object.entries(objects).forEach(obj => {
-			const name = obj[0];
-			const { view, length, breadth, x, y } = obj[1];
+
+			const { view, length, breadth, x, y, dots } = obj[1];
 			if(view){
-				html.push((<rect
-					x= {x}
-					y = {y}
-					width={breadth}
-					height = {length}
-					stroke = {'white'}
-					fill = {'none'}></rect>));
+				const rect = (
+					<g>
+						<DotMaker dots = {dots}></DotMaker>
+						<rect
+							x= {x}
+							y = {y}
+							width={breadth}
+							height = {length}
+							stroke = {'white'}
+							fill = {'none'}></rect>
+					</g>);
+				html.push(rect);
 			}
 		});
 
 		return (
 			<g>
 				{html}
+
 			</g>
 		);
 	}

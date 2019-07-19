@@ -6,7 +6,9 @@ class DotMaker extends React.Component {
 
 	render () {
 		const {
-			dots
+			dots,
+			fill,
+			stroke
 		} = this.props;
 
 		const dotHtml = dots.map((e, i) => {
@@ -15,8 +17,8 @@ class DotMaker extends React.Component {
 				 cx = {e.x}
 				 cy = {e.y}
 				 r= {5}
-				 fill = {fillColors[i]}
-				 stroke = "white"></circle>);
+				 fill = {fill || fillColors[i]}
+				 stroke = {stroke || "white"}></circle>);
 		});
 
 		return (

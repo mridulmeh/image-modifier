@@ -76,8 +76,7 @@ class ImageLoader extends React.Component {
 		} = this.state;
 		const {
 			modifyMode,
-			objects,
-			onMarkerAdd
+			objects
 		} = this.props;
 
 		const imageHtml = (src) => (<img
