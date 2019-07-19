@@ -1,5 +1,7 @@
 .image-loader-container{
     position: relative;
+    margin: 10px 30px;
+    
 }
 
 .image-loader-container svg, .image-loader-container img{

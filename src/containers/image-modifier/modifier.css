@@ -1,16 +1,25 @@
 .section {
-    height: 100vh;
+    height: calc(100vh - 31px);
     float: left;
+
+    border: 1px solid;
+
+    border-top: 10px solid;
+    padding: 10px 0px;
 }
 
 .left-section{
-    width: 5%;
+    width: calc(5% - 2px);
 }
 
 .section.middle-section {
-    width: 80%;
+    width:  calc(75% - 2px);
 }
 
 .section.right-section {
-    width: 15%;
+    width:  calc(20% - 2px);
+}
+
+.tool-button-box {
+    margin-top: 10px;
 }

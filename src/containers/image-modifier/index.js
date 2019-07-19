@@ -11,7 +11,15 @@ class ImageModifier extends React.Component {
 			modifyMode: false,
 			numOfObjects: 0,
 			objects: {
-
+				// Obj1: {
+				// 	view: true,
+				// 	dots: [
+				// 		// { x: 0, y: 0 },
+				// 		// { x: 100, y: 0 },
+				// 		// { x: 0, y: 100 },
+				// 		// { x: 100, y: 100 }
+				// 	]
+				// }
 			}
 		};
 	}
@@ -89,6 +97,7 @@ class ImageModifier extends React.Component {
 				</div>
 				<div className = "section right-section">
 					<VisibilityToggler
+						modifyMode = {modifyMode}
 					 objects = {objects}
 					 onToggle = {(obj) => this.toggleObject(obj)}></VisibilityToggler>
 				</div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import './tool-buttons.css';
 
 class ToolButton extends React.Component {
 
@@ -8,8 +9,8 @@ class ToolButton extends React.Component {
 		} = this.props;
 
 		return (
-			<div>
-				<button onClick = {onSubmit}>...</button>
+			<div className = "tool-button-box">
+				<button onClick = {onSubmit}>Add</button>
 			</div>
 		);
 	}

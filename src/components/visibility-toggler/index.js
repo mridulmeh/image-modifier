@@ -8,18 +8,25 @@ class VisibilityToggler extends React.Component {
 	render () {
 		const {
 			objects,
-			onToggle
+			onToggle,
+			modifyMode
 		} = this.props;
 
-		const objHtml = (objName, objValue) => (<div key = {objName} className = "visibility-toggle-row">
-			<img
-				className = "visibility-toggle-eye visibility-toggle-section"
-				src = {objValue.view ? show : hide}
-				onClick = {() => onToggle(objName)}
-				alt = {'toggleVisibility'}>
-			</img>
-			<div className = "visibility-toggle-name visibility-toggle-section">{objName}</div>
-		</div>);
+		const objHtml = (objName, objValue) => (
+			<div className = "visibility-toggle-row-container">
+				<div
+					key = {objName}
+					onClick = {() => onToggle(objName)}
+					className = "visibility-toggle-row">
+					<img
+						className = "visibility-toggle-eye visibility-toggle-section"
+						src = {objValue.view ? show : hide}
+
+						alt = {'toggleVisibility'}>
+					</img>
+					<div className = "visibility-toggle-name visibility-toggle-section">{objName}</div>
+				</div>
+			</div>);
 
 		const toggleHtml = 	Object.entries(objects).map(e => (
 			<div key = {e[0]}>
@@ -29,7 +36,11 @@ class VisibilityToggler extends React.Component {
 
 		return (
 			<div className = "visibility-toggle">
+				<div className = "visibility-toggle-header">
+					<span>Edit Mode : <b>{modifyMode ? 'ON' : 'OFF'}</b></span>
+				</div>
 				{toggleHtml}
+
 			</div>
 		);
 	}

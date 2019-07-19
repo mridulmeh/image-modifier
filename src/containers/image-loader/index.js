@@ -38,6 +38,9 @@ class ImageLoader extends React.Component {
 	componentDidMount () {
 		this.createSVG();
 	}
+	componentDidUpdate () {
+		this.createSVG();
+	}
 
 	addDot (event) {
 		const {
@@ -56,6 +59,7 @@ class ImageLoader extends React.Component {
 				y: event.clientY - svgDim.y
 			});
 		}
+
 		if(newDots.length === this.maxDots){
 			onMarkerAdd(newDots);
 			newDots = [];
@@ -81,7 +85,6 @@ class ImageLoader extends React.Component {
 
 		const imageHtml = (src) => (<img
 			ref = {node => this.node = node}
-
 			src = {src}
 			alt= {'modifier'}></img>);
 
@@ -90,7 +93,6 @@ class ImageLoader extends React.Component {
 		return (
 			<div className = "image-loader-container">
 				{actualHtml}
-				{modifyMode ? (<div>Click on the image to start adding points</div>) : ''}
 				<svg
 					onClick = {(e) => modifyMode ? this.addDot(e) : (() => {})()}
 					height = {height}
@@ -99,6 +101,7 @@ class ImageLoader extends React.Component {
 					y = {0}>
 					<DotMaker dots = {dots}></DotMaker>
 					<RectMaker objects = {objects}></RectMaker>
+
 				</svg>
 			</div>
 		);

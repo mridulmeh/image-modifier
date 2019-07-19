@@ -1,9 +1,33 @@
 .visibility-toggle-row {
     float: left;
+    width: fit-content;
+    background: white;
+    color: black;
+    padding: 5px 15px;
+    margin: 10px 0px;
+    box-shadow: 1px 1px 1px 1px white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visibility-toggle-header {
     width: 100%;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+
 }
 
 .visibility-toggle-section {
     float: left;
     padding: 0px 5px;
+}
+
+.visibility-toggle-row-container{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
