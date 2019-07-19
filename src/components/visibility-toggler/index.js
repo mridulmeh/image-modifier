@@ -11,7 +11,7 @@ class VisibilityToggler extends React.Component {
 			onToggle
 		} = this.props;
 
-		const objHtml = (objName, objValue) => (<div className = "visibility-toggle-row">
+		const objHtml = (objName, objValue) => (<div key = {objName} className = "visibility-toggle-row">
 			<img
 				className = "visibility-toggle-eye visibility-toggle-section"
 				src = {objValue.view ? show : hide}
@@ -22,7 +22,7 @@ class VisibilityToggler extends React.Component {
 		</div>);
 
 		const toggleHtml = 	Object.entries(objects).map(e => (
-			<div>
+			<div key = {e[0]}>
 				{objHtml(e[0], e[1])}
 			</div>
 		));

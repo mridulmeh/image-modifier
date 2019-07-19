@@ -1,0 +1,9 @@
+.image-loader-container{
+    position: relative;
+}
+
+.image-loader-container svg{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
