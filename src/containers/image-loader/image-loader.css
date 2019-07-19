@@ -2,7 +2,7 @@
     position: relative;
 }
 
-.image-loader-container svg{
+.image-loader-container svg, .image-loader-container img{
     position: absolute;
     top: 0px;
     left: 0px;

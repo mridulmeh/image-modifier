@@ -1,11 +1,28 @@
 import React from 'react';
 
+const fillColors = ['red', 'blue', 'green', 'yellow'];
+
 class DotMaker extends React.Component {
 
 	render () {
+		const {
+			dots
+		} = this.props;
+
+		const dotHtml = dots.map((e, i) => {
+			return (<circle
+				 key= {i}
+				 cx = {e.x}
+				 cy = {e.y}
+				 r= {5}
+				 fill = {fillColors[i]}
+				 stroke = "white"></circle>);
+		});
 
 		return (
-			<div></div>
+			<g>
+				{dotHtml}
+			</g>
 		);
 	}
 }
