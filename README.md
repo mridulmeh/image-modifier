@@ -1,8 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a basic app which can add layers on an image. These layers can then be used (like photoshop) to perform specific functions
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Installs the dependencies
 
 ### `npm start`
 

@@ -10,17 +10,7 @@ class ImageModifier extends React.Component {
 		this.state = {
 			modifyMode: false,
 			numOfObjects: 0,
-			objects: {
-				// Obj1: {
-				// 	view: true,
-				// 	dots: [
-				// 		// { x: 0, y: 0 },
-				// 		// { x: 100, y: 0 },
-				// 		// { x: 0, y: 100 },
-				// 		// { x: 100, y: 100 }
-				// 	]
-				// }
-			}
+			objects: {}
 		};
 	}
 
@@ -49,6 +39,7 @@ class ImageModifier extends React.Component {
 			xBounds = [Math.min(xBounds[0], e.x), Math.max(xBounds[1], e.x)];
 			yBounds = [Math.min(yBounds[0], e.y), Math.max(yBounds[1], e.y)];
 		});
+
 		const rectDots = [];
 		xBounds.forEach(x => {
 			yBounds.forEach(y => {
